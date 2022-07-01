@@ -78,4 +78,4 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
 // route for generate pdf
 Route::get('/generate-pdf', [TransactionController::class, 'downloadPDF']);
 Route::get('/generate-excel', [TransactionController::class, 'downloadEXCEL']);
-Route::view('error', '404');
+Route::view('error', 'landingpage.components.404');
