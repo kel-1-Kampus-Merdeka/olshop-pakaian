@@ -51,19 +51,6 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                         @auth
-                            <div class="header__right__auth">
-                                <a href="{{ route('dashboard.index') }}">Dashboard</a>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                        class="ft-power"></i>
-                                    Logout
-
-                                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
-                                        @csrf
-                                    </form>
-
-                                </a>
-                            </div>
 
                             <ul class="header__right__widget">
 
@@ -83,11 +70,27 @@
                                             <span class="icon_bag_alt"></span>
 
                                         </a></li>
+
                                 @endif
-
-
                             </ul>
-
+                            <div class="header__menu_auth header__right__auth ml-4">
+                                <ul>
+                                    <li><a href="#">{{(Auth::user()->name)}}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">User Profile</a></li>
+                                            <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
+                                            <li>
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <i class="ft-power"></i> Logout
+                                                <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                                                    @csrf
+                                                </form>
+                                            </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         @endauth
 
                         @guest

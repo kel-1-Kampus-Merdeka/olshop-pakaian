@@ -37,6 +37,7 @@ route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail'
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
+    // Route::get('/cart', ShopController::class);
 
     // untuk buat order cart
     Route::post('/cart/{id}', [ShopController::class, 'tambahCart'])->name('tambahCart');

@@ -70,6 +70,13 @@ class ShopController extends Controller
 
         return view('landingpage.pages.productdetails', compact('product', 'recomendations'));
     }
+    public function products(Request $request, $slug)
+    {
+        $product = Product::with(['galleries'])->where('slug', $slug)->firstOrFail();
+        $recomendations = Product::with(['galleries'])->inRandomOrder()->limit(4)->get();
+
+        return view('landingpage.pages.shopcart', compact('product', 'recomendations'));
+    }
 
     public function shop_list(Request $request){
 
