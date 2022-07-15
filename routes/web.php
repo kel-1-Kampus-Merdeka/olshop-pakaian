@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
-Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
+Route::get('/shop_list', [ShopController::class, 'shop_list'])->name('shop_list');
 Route::get('/shop', [ShopController::class, 'search'])->name('search');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
 

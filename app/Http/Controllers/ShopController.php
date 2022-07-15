@@ -24,6 +24,13 @@ class ShopController extends Controller
         return view('landingpage.home', compact('products'));
     }
 
+    public function shop_list(Request $request){
+
+        $products = Product::with(['galleries'])->latest()->limit(50)->get();
+
+        return view('landingpage.pages.shop', compact('products'));
+    }
+
     public function success(Request $request)
     {
         return view('landingpage.pages.success');
@@ -70,6 +77,7 @@ class ShopController extends Controller
 
         return view('landingpage.pages.productdetails', compact('product', 'recomendations'));
     }
+
     public function products(Request $request, $slug)
     {
         $product = Product::with(['galleries'])->where('slug', $slug)->firstOrFail();
@@ -78,12 +86,7 @@ class ShopController extends Controller
         return view('landingpage.pages.shopcart', compact('product', 'recomendations'));
     }
 
-    public function shop_list(Request $request){
 
-        $products = Product::with(['galleries'])->latest()->get();
-
-        return view('landingpage.pages.shop', compact('products'));
-    }
 
      public function cart(Request $request)
     {
