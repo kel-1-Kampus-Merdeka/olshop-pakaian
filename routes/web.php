@@ -62,7 +62,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-    Route::resource('my-transaction', MyTransactionController::class);
+       Route::resource('my-transaction', MyTransactionController::class);
 
     // Ini hanya dpa di akses oleh admin
     Route::middleware(['admin'])->group(function() {

@@ -42,7 +42,7 @@
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg"
                                         data-setbg="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}">
-                                        <div class="label new">New</div>
+
                                         <ul class="product__hover">
                                             <li><a href="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}"
                                                     class="image-popup"><span class="arrow_expand"></span></a></li>
