@@ -57,11 +57,21 @@
                         <p>{!! $product->description !!}</p>
                         <div class="product__details__button">
 
-                            <form action="{{ route('tambahCart', $product->id) }}" method="POST">
-                                @csrf
-                                <button type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Add to
-                                    cart</button>
-                            </form>
+                            @if (Auth::user()->roles == 'ADMIN')
+                                <form action="{{ route('tambahCart', $product->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="cart-btn" disabled><span class="icon_bag_alt"></span>
+                                        You're now admin </button>
+                                </form>
+                            @else
+                                <form action="{{ route('tambahCart', $product->id) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="cart-btn"><span class="icon_bag_alt"></span>
+                                        Add To Cart </button>
+                                </form>
+                            @endif
+
+
 
 
                             <ul>

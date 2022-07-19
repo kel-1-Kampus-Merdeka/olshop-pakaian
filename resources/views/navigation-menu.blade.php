@@ -32,9 +32,12 @@
                         </x-jet-nav-link>
                     @endif
 
-                    <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
-                        {{ __('Transaksi Saya') }}
-                    </x-jet-nav-link>
+                    @if (Auth::user()->roles == 'USER')
+                        <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
+                            {{ __('Transaksi Saya') }}
+                        </x-jet-nav-link>
+                    @endif
+
 
 
                 </div>
@@ -194,10 +197,13 @@
                 </x-jet-nav-link>
             @endif
 
+            @if (Auth::user()->roles == 'USER')
+                <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
+                    {{ __('Transaksi Saya') }}
+                </x-jet-nav-link>
+            @endif
 
-            <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
-                {{ __('Transaksi Saya') }}
-            </x-jet-nav-link>
+
 
 
 
