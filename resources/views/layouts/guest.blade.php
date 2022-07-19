@@ -27,8 +27,3 @@
 </body>
 
 </html>
-
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae quas perferendis eaque eos vero ea ratione tempore
-    tenetur cumque repellat. Totam dolor in illo dolorem voluptatum id omnis officiis repellendus praesentium sit at
-    consequatur, nostrum neque esse magni dicta saepe vitae asperiores culpa nihil fugiat similique deserunt! Nemo,
-    officiis nulla.</p>
